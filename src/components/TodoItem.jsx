@@ -4,8 +4,9 @@ function ToDoItem(props) {
   const [isDone, setIsDone ] = useState(false);
 
   function handleClick() {
-    if (isDone) setIsDone(false)
-    else setIsDone(true);
+    setIsDone(prevValue => {
+      return !prevValue;
+    })
   }
 
   return (
